@@ -88,7 +88,7 @@ sudo apt-get install libminiupnpc-dev
 7) Install the latest version of the BLTG wallet onto your masternode. The lastest version can be found here: https://github.com/Block-Logic-Technology-Group/bltg/releases
 
 Go to your home directory:
-cd /home
+cd ~/
 From your home directory, download the latest version from the BLTG GitHub repository:
  
 git clone https://github.com/Block-Logic-Technology-Group/bltg
@@ -98,15 +98,15 @@ cd bltg <enter>
 ./autogen.sh <enter>
 ./configure <enter>
 make <enter>
+make install <enter>
 
 Note: If this is the first time running the wallet in the VPS, you’ll need to attempt to start the wallet 
 
-cd src/   press enter
-./bltgd   press enter
- this will place the config files in your ~/.bltg data directory
-press 
-CTRL+C
- to exit / stop the wallet then continue to step 8
+bltgd   press enter
+
+This will place the config files in your ~/.bltg data directory
+
+Press CTRL+C to exit / stop the wallet then continue to step 8
  
 
 Configuration Cont.
@@ -127,17 +127,17 @@ nano bltg.conf
  masternode=1
  externalip=youruniquepublicipaddress:17127
  masternodeprivkey=Result of Step 1
+ 
 Make sure to replace rpcuser and rpcpassword with your own.
 
 10) to exit the editor press ctrl-x then enter
- then press enter
 
 Start your masternode
 11) Now, you need to finally start these things in this order
 – Start the daemon client in the VPS. 
 
 Start the wallet using 
-bltgd -daemon
+bltgd
 
 – From the Control wallet debug console
 startmasternode alias false <mymnalias>
