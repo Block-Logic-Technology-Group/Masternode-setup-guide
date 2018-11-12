@@ -114,9 +114,8 @@ Configuration Cont.
 cd ~/.bltg
 
 9) Open the bltg.conf by typing 
-vi bltg.conf
- then press i to go into insert mode and make the config look like this:
-
+nano bltg.conf
+ 
  rpcuser=long random username
  rpcpassword=longer random password
  rpcallowip=127.0.0.1
@@ -130,10 +129,7 @@ vi bltg.conf
  masternodeprivkey=Result of Step 1
 Make sure to replace rpcuser and rpcpassword with your own.
 
-10) to exit the editor press 
-esc
- then 
-:wq!
+10) to exit the editor press ctrl-x then enter
  then press enter
 
 Start your masternode
@@ -141,7 +137,7 @@ Start your masternode
 – Start the daemon client in the VPS. First go back to your installed wallet directory, 
 cd ~/bltg/src
 and then start the wallet using 
-./bltgd
+bltgd -daemon
 
 – From the Control wallet debug console
 startmasternode alias false <mymnalias>
@@ -158,13 +154,13 @@ The following should appear:
 }
 
 – Back in the VPS (remote wallet), start the masternode
-./bltg-cli startmasternode local false
+bltg-cli startmasternode local false
 
 – A message “masternode successfully started” should appear
 
 12)Use the following command to check status:
 
-./bltg-cli masternode status
+bltg-cli masternode status
 
 You should see something like:
 
@@ -184,7 +180,7 @@ Now the masternode setup is complete, you are safe to remove “enablezeromint=0
 Tearing down a Masternode
 1) How do I stop running MN1 on my VPS hoster and delete MN1 from my ‘BLTG Core – Wallet’?
 
-a) ./bltg-cli stop from the masternode to stop the wallet.
+a) bltg-cli stop from the masternode to stop the wallet.
 b) Then from your controller wallet PC, edit your masternode.conf, delete the MN1 masternode line entry.
 c) Now restart the controller wallet.
 d) your 12K will now be unlocked.
