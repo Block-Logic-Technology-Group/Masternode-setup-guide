@@ -134,9 +134,9 @@ Make sure to replace rpcuser and rpcpassword with your own.
 
 Start your masternode
 11) Now, you need to finally start these things in this order
-– Start the daemon client in the VPS. First go back to your installed wallet directory, 
-cd ~/bltg/src
-and then start the wallet using 
+– Start the daemon client in the VPS. 
+
+Start the wallet using 
 bltgd -daemon
 
 – From the Control wallet debug console
